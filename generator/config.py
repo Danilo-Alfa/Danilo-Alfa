@@ -63,6 +63,23 @@ def validate_config(config: dict) -> dict:
                 f"projects[{i}].arm must be an integer from 0 to {len(galaxy_arms) - 1}."
             )
 
+    # timeline — optional, validate entries if present
+    timeline = config.get("timeline", [])
+    if not isinstance(timeline, list):
+        raise ConfigError("'timeline' must be a list.")
+    for i, entry in enumerate(timeline):
+        if not isinstance(entry, dict):
+            raise ConfigError(f"timeline[{i}] must be a mapping.")
+        if "year" not in entry or not isinstance(entry["year"], int):
+            raise ConfigError(f"timeline[{i}].year is required and must be an integer.")
+        if "label" not in entry or not isinstance(entry["label"], str):
+            raise ConfigError(f"timeline[{i}].label is required and must be a string.")
+        arm_idx = entry.get("arm", 0)
+        if not isinstance(arm_idx, int) or arm_idx < 0 or arm_idx >= len(galaxy_arms):
+            raise ConfigError(
+                f"timeline[{i}].arm must be an integer from 0 to {len(galaxy_arms) - 1}."
+            )
+
     # theme — optional, validate hex codes
     user_theme = config.get("theme", {})
     if not isinstance(user_theme, dict):
@@ -87,5 +104,6 @@ def validate_config(config: dict) -> dict:
     lang_cfg = config.setdefault("languages", {})
     lang_cfg.setdefault("exclude", [])
     lang_cfg.setdefault("max_display", 8)
+    config.setdefault("timeline", [])
 
     return config

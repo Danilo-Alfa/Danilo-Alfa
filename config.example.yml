@@ -65,6 +65,28 @@ projects:
     arm: 1
     description: "High-performance API gateway with built-in observability and caching."
 
+# Timeline entries for the coding evolution trail
+# Each entry needs:
+#   year: 2020            — Year the milestone occurred
+#   label: "Started React" — Short description
+#   arm: 0-2              — Which galaxy arm (color category)
+timeline:
+  - year: 2019
+    label: "First Lines of Code"
+    arm: 2
+  - year: 2020
+    label: "React & Node.js"
+    arm: 0
+  - year: 2021
+    label: "TypeScript Adoption"
+    arm: 2
+  - year: 2022
+    label: "Cloud & DevOps"
+    arm: 1
+  - year: 2023
+    label: "Open Source Contributor"
+    arm: 2
+
 # Theme color overrides (optional — defaults to deep space palette)
 # All values must be valid hex color codes (#RRGGBB)
 theme:

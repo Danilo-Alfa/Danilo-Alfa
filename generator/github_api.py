@@ -198,6 +198,67 @@ class GitHubAPI:
             logger.warning("Search API failed for '%s': %s", query, e)
         return 0
 
+    def fetch_contributions(self) -> dict:
+        """Fetch contribution calendar data via GraphQL.
+
+        Returns:
+            dict with total_count (int) and weeks (list of lists of day dicts).
+        """
+        if not self.token:
+            logger.warning("Token required for contributions API.")
+            return {"total_count": 0, "weeks": []}
+
+        query = """
+        query($username: String!) {
+            user(login: $username) {
+                contributionsCollection {
+                    contributionCalendar {
+                        totalContributions
+                        weeks {
+                            contributionDays {
+                                date
+                                contributionCount
+                                weekday
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        """
+        try:
+            resp = self._request(
+                "POST",
+                self.GRAPHQL_URL,
+                json={"query": query, "variables": {"username": self.username}},
+            )
+            resp.raise_for_status()
+            data = resp.json()
+
+            if "errors" in data:
+                logger.warning("GraphQL errors fetching contributions: %s", data["errors"])
+                return {"total_count": 0, "weeks": []}
+
+            calendar = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]
+            weeks = []
+            for week in calendar["weeks"]:
+                days = []
+                for day in week["contributionDays"]:
+                    days.append({
+                        "date": day["date"],
+                        "count": day["contributionCount"],
+                        "weekday": day["weekday"],
+                    })
+                weeks.append(days)
+
+            return {
+                "total_count": calendar["totalContributions"],
+                "weeks": weeks,
+            }
+        except (requests.exceptions.RequestException, ValueError, KeyError) as e:
+            logger.warning("Could not fetch contributions: %s", e)
+            return {"total_count": 0, "weeks": []}
+
     def fetch_languages(self) -> dict:
         """Fetch language byte counts aggregated across all owned non-fork repos."""
         languages = {}

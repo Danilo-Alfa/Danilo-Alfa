@@ -1,6 +1,9 @@
 """SVG Builder — orchestrator connecting config, stats, and templates."""
 
-from generator.templates import galaxy_header, stats_card, tech_stack, projects_constellation
+from generator.templates import (
+    galaxy_header, stats_card, tech_stack, projects_constellation,
+    contribution_heatmap, skill_constellation, coding_timeline,
+)
 
 
 class SVGBuilder:
@@ -10,13 +13,15 @@ class SVGBuilder:
     which resolves theme defaults and applies missing optional fields.
     """
 
-    def __init__(self, config: dict, stats: dict, languages: dict):
+    def __init__(self, config: dict, stats: dict, languages: dict, contributions: dict = None):
         self.config = config
         self.stats = stats
         self.languages = languages
+        self.contributions = contributions or {}
         self.theme = config["theme"]
         self.galaxy_arms = config.get("galaxy_arms", [])
         self.projects = config.get("projects", [])
+        self.timeline = config.get("timeline", [])
 
     def render_galaxy_header(self) -> str:
         return galaxy_header.render(
@@ -47,6 +52,25 @@ class SVGBuilder:
     def render_projects_constellation(self) -> str:
         return projects_constellation.render(
             projects=self.projects,
+            galaxy_arms=self.galaxy_arms,
+            theme=self.theme,
+        )
+
+    def render_contribution_heatmap(self) -> str:
+        return contribution_heatmap.render(
+            contributions=self.contributions,
+            theme=self.theme,
+        )
+
+    def render_skill_constellation(self) -> str:
+        return skill_constellation.render(
+            galaxy_arms=self.galaxy_arms,
+            theme=self.theme,
+        )
+
+    def render_coding_timeline(self) -> str:
+        return coding_timeline.render(
+            timeline=self.timeline,
             galaxy_arms=self.galaxy_arms,
             theme=self.theme,
         )

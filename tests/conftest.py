@@ -5,6 +5,7 @@ import copy
 import pytest
 
 from generator.config import validate_config
+from generator.main import _generate_demo_contributions
 from generator.svg_builder import SVGBuilder
 
 
@@ -34,6 +35,12 @@ def sample_config():
         "projects": [
             {"repo": "galaxy-dev/nebula-ui", "arm": 0, "description": "A component library."},
             {"repo": "galaxy-dev/stargate-api", "arm": 1, "description": "High-performance API gateway."},
+        ],
+        "timeline": [
+            {"year": 2020, "label": "Started React", "arm": 0},
+            {"year": 2021, "label": "Node.js Backend", "arm": 1},
+            {"year": 2022, "label": "TypeScript", "arm": 2},
+            {"year": 2023, "label": "DevOps", "arm": 2},
         ],
         "theme": {
             "void": "#080c14",
@@ -73,13 +80,19 @@ def sample_languages():
 
 
 @pytest.fixture
+def sample_contributions():
+    """Synthetic contribution calendar data."""
+    return _generate_demo_contributions()
+
+
+@pytest.fixture
 def cfg(sample_config):
     """Return a deep copy of sample_config for mutation-safe tests."""
     return copy.deepcopy(sample_config)
 
 
 @pytest.fixture
-def svg_builder(sample_config, sample_stats, sample_languages):
+def svg_builder(sample_config, sample_stats, sample_languages, sample_contributions):
     """Create an SVGBuilder from validated sample fixtures."""
     config = validate_config(copy.deepcopy(sample_config))
-    return SVGBuilder(config, sample_stats, sample_languages)
+    return SVGBuilder(config, sample_stats, sample_languages, sample_contributions)

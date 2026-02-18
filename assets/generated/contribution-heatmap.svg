@@ -1,0 +1,431 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="188" viewBox="0 0 850 188">
+  <defs>
+    <filter id="cell-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2" in="SourceGraphic" result="blur"/>
+      <feFlood flood-color="#00d4ff" flood-opacity="0.5" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      @keyframes hm-cell-appear {
+        from { opacity: 0; transform: scale(0.5); }
+        to { opacity: var(--cell-op, 0.3); transform: scale(1); }
+      }
+      @keyframes hm-cell-pulse {
+        0%, 100% { opacity: var(--cell-op, 1); }
+        50% { opacity: 1; }
+      }
+      @keyframes hm-count-glow {
+        0%, 100% { opacity: 0.8; }
+        50% { opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0.5" y="0.5" width="849" height="187" rx="12" ry="12"
+        fill="#0f1623" stroke="#1a2332" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="30" y="30" fill="#64748b" font-size="11" font-family="monospace" letter-spacing="3">CONTRIBUTION NEBULA</text>
+  <circle cx="240" cy="26" r="3" fill="#00d4ff" opacity="0.8"><animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></circle>
+  <text x="820" y="30" fill="#00d4ff" font-size="12" font-family="monospace" text-anchor="end" font-weight="bold" style="animation: hm-count-glow 3s ease infinite">1.9k contributions</text>
+
+  <!-- Month labels -->
+  <text x="45" y="47" fill="#64748b" font-size="9" font-family="monospace" opacity="0.7">Feb</text>
+  <text x="73" y="47" fill="#64748b" font-size="9" font-family="monospace" opacity="0.7">Mar</text>
+  <text x="143" y="47" fill="#64748b" font-size="9" font-family="monospace" opacity="0.7">Apr</text>
+  <text x="199" y="47" fill="#64748b" font-size="9" font-family="monospace" opacity="0.7">May</text>
+  <text x="255" y="47" fill="#64748b" font-size="9" font-family="monospace" opacity="0.7">Jun</text>
+  <text x="325" y="47" fill="#64748b" font-size="9" font-family="monospace" opacity="0.7">Jul</text>
+  <text x="381" y="47" fill="#64748b" font-size="9" font-family="monospace" opacity="0.7">Aug</text>
+  <text x="451" y="47" fill="#64748b" font-size="9" font-family="monospace" opacity="0.7">Sep</text>
+  <text x="507" y="47" fill="#64748b" font-size="9" font-family="monospace" opacity="0.7">Oct</text>
+  <text x="563" y="47" fill="#64748b" font-size="9" font-family="monospace" opacity="0.7">Nov</text>
+  <text x="633" y="47" fill="#64748b" font-size="9" font-family="monospace" opacity="0.7">Dec</text>
+  <text x="689" y="47" fill="#64748b" font-size="9" font-family="monospace" opacity="0.7">Jan</text>
+  <text x="745" y="47" fill="#64748b" font-size="9" font-family="monospace" opacity="0.7">Feb</text>
+
+  <!-- Day labels -->
+  <text x="37" y="77.5" fill="#64748b" font-size="9" font-family="monospace" text-anchor="end" opacity="0.6">Mon</text>
+  <text x="37" y="105.5" fill="#64748b" font-size="9" font-family="monospace" text-anchor="end" opacity="0.6">Wed</text>
+  <text x="37" y="133.5" fill="#64748b" font-size="9" font-family="monospace" text-anchor="end" opacity="0.6">Fri</text>
+
+  <!-- Contribution cells -->
+  <rect x="45" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.00s forwards;"/>
+  <rect x="45" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.00s forwards; animation: hm-cell-pulse 3s ease 1.0s infinite;"/>
+  <rect x="45" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.00s forwards;"/>
+  <rect x="45" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.00s forwards; animation: hm-cell-pulse 3s ease 1.0s infinite;"/>
+  <rect x="45" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.00s forwards;"/>
+  <rect x="45" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.00s forwards;"/>
+  <rect x="45" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.00s forwards;"/>
+  <rect x="59" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.01s forwards;"/>
+  <rect x="59" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.01s forwards;"/>
+  <rect x="59" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.01s forwards;"/>
+  <rect x="59" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.01s forwards;"/>
+  <rect x="59" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.01s forwards; animation: hm-cell-pulse 3s ease 1.015s infinite;"/>
+  <rect x="59" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.01s forwards;"/>
+  <rect x="59" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.01s forwards;"/>
+  <rect x="73" y="55" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.03s forwards;"/>
+  <rect x="73" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.03s forwards;"/>
+  <rect x="73" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.03s forwards;"/>
+  <rect x="73" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.03s forwards;"/>
+  <rect x="73" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.03s forwards;"/>
+  <rect x="73" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.03s forwards;"/>
+  <rect x="73" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.03s forwards;"/>
+  <rect x="87" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.04s forwards;"/>
+  <rect x="87" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.04s forwards;"/>
+  <rect x="87" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.04s forwards;"/>
+  <rect x="87" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.04s forwards; animation: hm-cell-pulse 3s ease 1.045s infinite;"/>
+  <rect x="87" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.04s forwards;"/>
+  <rect x="87" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.04s forwards;"/>
+  <rect x="87" y="139" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.04s forwards;"/>
+  <rect x="101" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.06s forwards;"/>
+  <rect x="101" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.06s forwards;"/>
+  <rect x="101" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.06s forwards;"/>
+  <rect x="101" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.06s forwards;"/>
+  <rect x="101" y="111" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.06s forwards;"/>
+  <rect x="101" y="125" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.06s forwards;"/>
+  <rect x="101" y="139" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.06s forwards;"/>
+  <rect x="115" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.07s forwards;"/>
+  <rect x="115" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.07s forwards;"/>
+  <rect x="115" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.07s forwards;"/>
+  <rect x="115" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.07s forwards;"/>
+  <rect x="115" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.07s forwards;"/>
+  <rect x="115" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.07s forwards;"/>
+  <rect x="115" y="139" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.07s forwards;"/>
+  <rect x="129" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.09s forwards;"/>
+  <rect x="129" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.09s forwards;"/>
+  <rect x="129" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.09s forwards;"/>
+  <rect x="129" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.09s forwards;"/>
+  <rect x="129" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.09s forwards;"/>
+  <rect x="129" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.09s forwards;"/>
+  <rect x="129" y="139" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.09s forwards;"/>
+  <rect x="143" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.10s forwards;"/>
+  <rect x="143" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.10s forwards;"/>
+  <rect x="143" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.10s forwards;"/>
+  <rect x="143" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.10s forwards;"/>
+  <rect x="143" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.10s forwards;"/>
+  <rect x="143" y="125" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.10s forwards;"/>
+  <rect x="143" y="139" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.10s forwards;"/>
+  <rect x="157" y="55" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.12s forwards;"/>
+  <rect x="157" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.12s forwards; animation: hm-cell-pulse 3s ease 1.12s infinite;"/>
+  <rect x="157" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.12s forwards;"/>
+  <rect x="157" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.12s forwards; animation: hm-cell-pulse 3s ease 1.12s infinite;"/>
+  <rect x="157" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.12s forwards;"/>
+  <rect x="157" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.12s forwards;"/>
+  <rect x="157" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.12s forwards;"/>
+  <rect x="171" y="55" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.14s forwards;"/>
+  <rect x="171" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.14s forwards;"/>
+  <rect x="171" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.14s forwards;"/>
+  <rect x="171" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.14s forwards;"/>
+  <rect x="171" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.14s forwards; animation: hm-cell-pulse 3s ease 1.135s infinite;"/>
+  <rect x="171" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.14s forwards; animation: hm-cell-pulse 3s ease 1.135s infinite;"/>
+  <rect x="171" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.14s forwards;"/>
+  <rect x="185" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.15s forwards;"/>
+  <rect x="185" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.15s forwards; animation: hm-cell-pulse 3s ease 1.15s infinite;"/>
+  <rect x="185" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.15s forwards;"/>
+  <rect x="185" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.15s forwards;"/>
+  <rect x="185" y="111" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.15s forwards;"/>
+  <rect x="185" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.15s forwards;"/>
+  <rect x="185" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.15s forwards;"/>
+  <rect x="199" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.16s forwards;"/>
+  <rect x="199" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.16s forwards;"/>
+  <rect x="199" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.16s forwards;"/>
+  <rect x="199" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.16s forwards;"/>
+  <rect x="199" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.16s forwards;"/>
+  <rect x="199" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.16s forwards; animation: hm-cell-pulse 3s ease 1.165s infinite;"/>
+  <rect x="199" y="139" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.16s forwards;"/>
+  <rect x="213" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.18s forwards;"/>
+  <rect x="213" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.18s forwards;"/>
+  <rect x="213" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.18s forwards;"/>
+  <rect x="213" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.18s forwards;"/>
+  <rect x="213" y="111" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.18s forwards;"/>
+  <rect x="213" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.18s forwards;"/>
+  <rect x="213" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.18s forwards;"/>
+  <rect x="227" y="55" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.20s forwards;"/>
+  <rect x="227" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.20s forwards;"/>
+  <rect x="227" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.20s forwards;"/>
+  <rect x="227" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.20s forwards;"/>
+  <rect x="227" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.20s forwards;"/>
+  <rect x="227" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.20s forwards;"/>
+  <rect x="227" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.20s forwards;"/>
+  <rect x="241" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.21s forwards;"/>
+  <rect x="241" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.21s forwards;"/>
+  <rect x="241" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.21s forwards;"/>
+  <rect x="241" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.21s forwards; animation: hm-cell-pulse 3s ease 1.21s infinite;"/>
+  <rect x="241" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.21s forwards;"/>
+  <rect x="241" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.21s forwards;"/>
+  <rect x="241" y="139" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.21s forwards;"/>
+  <rect x="255" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.22s forwards;"/>
+  <rect x="255" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.22s forwards;"/>
+  <rect x="255" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.22s forwards;"/>
+  <rect x="255" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.22s forwards; animation: hm-cell-pulse 3s ease 1.225s infinite;"/>
+  <rect x="255" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.22s forwards;"/>
+  <rect x="255" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.22s forwards;"/>
+  <rect x="255" y="139" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.22s forwards;"/>
+  <rect x="269" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.24s forwards;"/>
+  <rect x="269" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.24s forwards;"/>
+  <rect x="269" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.24s forwards;"/>
+  <rect x="269" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.24s forwards;"/>
+  <rect x="269" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.24s forwards;"/>
+  <rect x="269" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.24s forwards;"/>
+  <rect x="269" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.24s forwards;"/>
+  <rect x="283" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.26s forwards;"/>
+  <rect x="283" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.26s forwards;"/>
+  <rect x="283" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.26s forwards;"/>
+  <rect x="283" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.26s forwards;"/>
+  <rect x="283" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.26s forwards;"/>
+  <rect x="283" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.26s forwards;"/>
+  <rect x="283" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.26s forwards;"/>
+  <rect x="297" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.27s forwards;"/>
+  <rect x="297" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.27s forwards; animation: hm-cell-pulse 3s ease 1.27s infinite;"/>
+  <rect x="297" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.27s forwards;"/>
+  <rect x="297" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.27s forwards; animation: hm-cell-pulse 3s ease 1.27s infinite;"/>
+  <rect x="297" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.27s forwards;"/>
+  <rect x="297" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.27s forwards; animation: hm-cell-pulse 3s ease 1.27s infinite;"/>
+  <rect x="297" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.27s forwards;"/>
+  <rect x="311" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.28s forwards;"/>
+  <rect x="311" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.28s forwards;"/>
+  <rect x="311" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.28s forwards; animation: hm-cell-pulse 3s ease 1.285s infinite;"/>
+  <rect x="311" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.28s forwards;"/>
+  <rect x="311" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.28s forwards;"/>
+  <rect x="311" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.28s forwards;"/>
+  <rect x="311" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.28s forwards;"/>
+  <rect x="325" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.30s forwards;"/>
+  <rect x="325" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.30s forwards;"/>
+  <rect x="325" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.30s forwards;"/>
+  <rect x="325" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.30s forwards; animation: hm-cell-pulse 3s ease 1.3s infinite;"/>
+  <rect x="325" y="111" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.30s forwards;"/>
+  <rect x="325" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.30s forwards;"/>
+  <rect x="325" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.30s forwards;"/>
+  <rect x="339" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.32s forwards;"/>
+  <rect x="339" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.32s forwards;"/>
+  <rect x="339" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.32s forwards;"/>
+  <rect x="339" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.32s forwards;"/>
+  <rect x="339" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.32s forwards;"/>
+  <rect x="339" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.32s forwards;"/>
+  <rect x="339" y="139" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.32s forwards;"/>
+  <rect x="353" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.33s forwards;"/>
+  <rect x="353" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.33s forwards; animation: hm-cell-pulse 3s ease 1.33s infinite;"/>
+  <rect x="353" y="83" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.33s forwards;"/>
+  <rect x="353" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.33s forwards;"/>
+  <rect x="353" y="111" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.33s forwards;"/>
+  <rect x="353" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.33s forwards;"/>
+  <rect x="353" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.33s forwards;"/>
+  <rect x="367" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.34s forwards;"/>
+  <rect x="367" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.34s forwards; animation: hm-cell-pulse 3s ease 1.345s infinite;"/>
+  <rect x="367" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.34s forwards;"/>
+  <rect x="367" y="97" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.34s forwards;"/>
+  <rect x="367" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.34s forwards;"/>
+  <rect x="367" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.34s forwards;"/>
+  <rect x="367" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.34s forwards;"/>
+  <rect x="381" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.36s forwards;"/>
+  <rect x="381" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.36s forwards;"/>
+  <rect x="381" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.36s forwards;"/>
+  <rect x="381" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.36s forwards;"/>
+  <rect x="381" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.36s forwards;"/>
+  <rect x="381" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.36s forwards; animation: hm-cell-pulse 3s ease 1.3599999999999999s infinite;"/>
+  <rect x="381" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.36s forwards;"/>
+  <rect x="395" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.38s forwards;"/>
+  <rect x="395" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.38s forwards;"/>
+  <rect x="395" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.38s forwards;"/>
+  <rect x="395" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.38s forwards;"/>
+  <rect x="395" y="111" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.38s forwards;"/>
+  <rect x="395" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.38s forwards;"/>
+  <rect x="395" y="139" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.38s forwards;"/>
+  <rect x="409" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.39s forwards;"/>
+  <rect x="409" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.39s forwards;"/>
+  <rect x="409" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.39s forwards;"/>
+  <rect x="409" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.39s forwards;"/>
+  <rect x="409" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.39s forwards;"/>
+  <rect x="409" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.39s forwards;"/>
+  <rect x="409" y="139" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.39s forwards;"/>
+  <rect x="423" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.40s forwards;"/>
+  <rect x="423" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.40s forwards;"/>
+  <rect x="423" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.40s forwards;"/>
+  <rect x="423" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.40s forwards;"/>
+  <rect x="423" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.40s forwards;"/>
+  <rect x="423" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.40s forwards;"/>
+  <rect x="423" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.40s forwards;"/>
+  <rect x="437" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.42s forwards;"/>
+  <rect x="437" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.42s forwards; animation: hm-cell-pulse 3s ease 1.42s infinite;"/>
+  <rect x="437" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.42s forwards;"/>
+  <rect x="437" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.42s forwards;"/>
+  <rect x="437" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.42s forwards;"/>
+  <rect x="437" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.42s forwards;"/>
+  <rect x="437" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.42s forwards;"/>
+  <rect x="451" y="55" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.43s forwards;"/>
+  <rect x="451" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.43s forwards; animation: hm-cell-pulse 3s ease 1.435s infinite;"/>
+  <rect x="451" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.43s forwards;"/>
+  <rect x="451" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.43s forwards; animation: hm-cell-pulse 3s ease 1.435s infinite;"/>
+  <rect x="451" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.43s forwards;"/>
+  <rect x="451" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.43s forwards;"/>
+  <rect x="451" y="139" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.43s forwards;"/>
+  <rect x="465" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.45s forwards;"/>
+  <rect x="465" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.45s forwards;"/>
+  <rect x="465" y="83" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.45s forwards;"/>
+  <rect x="465" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.45s forwards;"/>
+  <rect x="465" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.45s forwards; animation: hm-cell-pulse 3s ease 1.45s infinite;"/>
+  <rect x="465" y="125" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.45s forwards;"/>
+  <rect x="465" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.45s forwards;"/>
+  <rect x="479" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.46s forwards;"/>
+  <rect x="479" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.46s forwards;"/>
+  <rect x="479" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.46s forwards;"/>
+  <rect x="479" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.46s forwards;"/>
+  <rect x="479" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.46s forwards;"/>
+  <rect x="479" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.46s forwards;"/>
+  <rect x="479" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.46s forwards;"/>
+  <rect x="493" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.48s forwards;"/>
+  <rect x="493" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.48s forwards;"/>
+  <rect x="493" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.48s forwards; animation: hm-cell-pulse 3s ease 1.48s infinite;"/>
+  <rect x="493" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.48s forwards;"/>
+  <rect x="493" y="111" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.48s forwards;"/>
+  <rect x="493" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.48s forwards; animation: hm-cell-pulse 3s ease 1.48s infinite;"/>
+  <rect x="493" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.48s forwards;"/>
+  <rect x="507" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.49s forwards;"/>
+  <rect x="507" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.49s forwards;"/>
+  <rect x="507" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.49s forwards;"/>
+  <rect x="507" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.49s forwards;"/>
+  <rect x="507" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.49s forwards;"/>
+  <rect x="507" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.49s forwards;"/>
+  <rect x="507" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.49s forwards;"/>
+  <rect x="521" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.51s forwards;"/>
+  <rect x="521" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.51s forwards;"/>
+  <rect x="521" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.51s forwards; animation: hm-cell-pulse 3s ease 1.51s infinite;"/>
+  <rect x="521" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.51s forwards;"/>
+  <rect x="521" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.51s forwards; animation: hm-cell-pulse 3s ease 1.51s infinite;"/>
+  <rect x="521" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.51s forwards;"/>
+  <rect x="521" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.51s forwards;"/>
+  <rect x="535" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.53s forwards;"/>
+  <rect x="535" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.53s forwards;"/>
+  <rect x="535" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.53s forwards;"/>
+  <rect x="535" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.53s forwards;"/>
+  <rect x="535" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.53s forwards;"/>
+  <rect x="535" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.53s forwards; animation: hm-cell-pulse 3s ease 1.525s infinite;"/>
+  <rect x="535" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.53s forwards;"/>
+  <rect x="549" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.54s forwards;"/>
+  <rect x="549" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.54s forwards;"/>
+  <rect x="549" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.54s forwards;"/>
+  <rect x="549" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.54s forwards;"/>
+  <rect x="549" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.54s forwards; animation: hm-cell-pulse 3s ease 1.54s infinite;"/>
+  <rect x="549" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.54s forwards;"/>
+  <rect x="549" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.54s forwards;"/>
+  <rect x="563" y="55" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.55s forwards;"/>
+  <rect x="563" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.55s forwards;"/>
+  <rect x="563" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.55s forwards; animation: hm-cell-pulse 3s ease 1.555s infinite;"/>
+  <rect x="563" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.55s forwards;"/>
+  <rect x="563" y="111" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.55s forwards;"/>
+  <rect x="563" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.55s forwards; animation: hm-cell-pulse 3s ease 1.555s infinite;"/>
+  <rect x="563" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.55s forwards;"/>
+  <rect x="577" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.57s forwards;"/>
+  <rect x="577" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.57s forwards;"/>
+  <rect x="577" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.57s forwards;"/>
+  <rect x="577" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.57s forwards;"/>
+  <rect x="577" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.57s forwards;"/>
+  <rect x="577" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.57s forwards;"/>
+  <rect x="577" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.57s forwards;"/>
+  <rect x="591" y="55" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.58s forwards;"/>
+  <rect x="591" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.58s forwards; animation: hm-cell-pulse 3s ease 1.585s infinite;"/>
+  <rect x="591" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.58s forwards;"/>
+  <rect x="591" y="97" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.58s forwards;"/>
+  <rect x="591" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.58s forwards;"/>
+  <rect x="591" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.58s forwards; animation: hm-cell-pulse 3s ease 1.585s infinite;"/>
+  <rect x="591" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.58s forwards;"/>
+  <rect x="605" y="55" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.60s forwards;"/>
+  <rect x="605" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.60s forwards;"/>
+  <rect x="605" y="83" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.60s forwards;"/>
+  <rect x="605" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.60s forwards; animation: hm-cell-pulse 3s ease 1.6s infinite;"/>
+  <rect x="605" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.60s forwards; animation: hm-cell-pulse 3s ease 1.6s infinite;"/>
+  <rect x="605" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.60s forwards;"/>
+  <rect x="605" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.60s forwards;"/>
+  <rect x="619" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.61s forwards;"/>
+  <rect x="619" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.61s forwards; animation: hm-cell-pulse 3s ease 1.615s infinite;"/>
+  <rect x="619" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.61s forwards;"/>
+  <rect x="619" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.61s forwards; animation: hm-cell-pulse 3s ease 1.615s infinite;"/>
+  <rect x="619" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.61s forwards;"/>
+  <rect x="619" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.61s forwards;"/>
+  <rect x="619" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.61s forwards;"/>
+  <rect x="633" y="55" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.63s forwards;"/>
+  <rect x="633" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.63s forwards;"/>
+  <rect x="633" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.63s forwards; animation: hm-cell-pulse 3s ease 1.63s infinite;"/>
+  <rect x="633" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.63s forwards; animation: hm-cell-pulse 3s ease 1.63s infinite;"/>
+  <rect x="633" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.63s forwards;"/>
+  <rect x="633" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.63s forwards;"/>
+  <rect x="633" y="139" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.63s forwards;"/>
+  <rect x="647" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.65s forwards;"/>
+  <rect x="647" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.65s forwards;"/>
+  <rect x="647" y="83" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.65s forwards;"/>
+  <rect x="647" y="97" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.65s forwards;"/>
+  <rect x="647" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.65s forwards;"/>
+  <rect x="647" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.65s forwards;"/>
+  <rect x="647" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.65s forwards;"/>
+  <rect x="661" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.66s forwards;"/>
+  <rect x="661" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.66s forwards;"/>
+  <rect x="661" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.66s forwards;"/>
+  <rect x="661" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.66s forwards;"/>
+  <rect x="661" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.66s forwards;"/>
+  <rect x="661" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.66s forwards; animation: hm-cell-pulse 3s ease 1.66s infinite;"/>
+  <rect x="661" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.66s forwards;"/>
+  <rect x="675" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.67s forwards;"/>
+  <rect x="675" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.67s forwards;"/>
+  <rect x="675" y="83" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.67s forwards;"/>
+  <rect x="675" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.67s forwards; animation: hm-cell-pulse 3s ease 1.6749999999999998s infinite;"/>
+  <rect x="675" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.67s forwards;"/>
+  <rect x="675" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.67s forwards;"/>
+  <rect x="675" y="139" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.67s forwards;"/>
+  <rect x="689" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.69s forwards;"/>
+  <rect x="689" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.69s forwards;"/>
+  <rect x="689" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.69s forwards;"/>
+  <rect x="689" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.69s forwards; animation: hm-cell-pulse 3s ease 1.69s infinite;"/>
+  <rect x="689" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.69s forwards;"/>
+  <rect x="689" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.69s forwards;"/>
+  <rect x="689" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.69s forwards;"/>
+  <rect x="703" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.70s forwards;"/>
+  <rect x="703" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.70s forwards;"/>
+  <rect x="703" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.70s forwards;"/>
+  <rect x="703" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.70s forwards; animation: hm-cell-pulse 3s ease 1.705s infinite;"/>
+  <rect x="703" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.70s forwards;"/>
+  <rect x="703" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.70s forwards;"/>
+  <rect x="703" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.70s forwards;"/>
+  <rect x="717" y="55" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.72s forwards;"/>
+  <rect x="717" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.72s forwards; animation: hm-cell-pulse 3s ease 1.72s infinite;"/>
+  <rect x="717" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.72s forwards;"/>
+  <rect x="717" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.72s forwards;"/>
+  <rect x="717" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.72s forwards;"/>
+  <rect x="717" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.72s forwards;"/>
+  <rect x="717" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.72s forwards;"/>
+  <rect x="731" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.73s forwards;"/>
+  <rect x="731" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.73s forwards;"/>
+  <rect x="731" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.73s forwards; animation: hm-cell-pulse 3s ease 1.7349999999999999s infinite;"/>
+  <rect x="731" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.73s forwards;"/>
+  <rect x="731" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.73s forwards;"/>
+  <rect x="731" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.73s forwards;"/>
+  <rect x="731" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.73s forwards;"/>
+  <rect x="745" y="55" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.75s forwards;"/>
+  <rect x="745" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.75s forwards;"/>
+  <rect x="745" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.75s forwards;"/>
+  <rect x="745" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.75s forwards;"/>
+  <rect x="745" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.75; animation: hm-cell-appear 0.4s ease 0.75s forwards;"/>
+  <rect x="745" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.75s forwards;"/>
+  <rect x="745" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.75s forwards;"/>
+  <rect x="759" y="55" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.77s forwards;"/>
+  <rect x="759" y="69" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.77s forwards; animation: hm-cell-pulse 3s ease 1.7650000000000001s infinite;"/>
+  <rect x="759" y="83" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.77s forwards; animation: hm-cell-pulse 3s ease 1.7650000000000001s infinite;"/>
+  <rect x="759" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.77s forwards;"/>
+  <rect x="759" y="111" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.77s forwards;"/>
+  <rect x="759" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.77s forwards; animation: hm-cell-pulse 3s ease 1.7650000000000001s infinite;"/>
+  <rect x="759" y="139" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.77s forwards;"/>
+
+  <!-- Legend -->
+  <text x="45" y="168" fill="#64748b" font-size="9" font-family="monospace" opacity="0.6">Less</text>
+  <rect x="77" y="160" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0.3"/>
+  <rect x="90" y="160" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0.25"/>
+  <rect x="103" y="160" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0.5"/>
+  <rect x="116" y="160" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0.75"/>
+  <rect x="129" y="160" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="1.0"/>
+  <text x="146" y="168" fill="#64748b" font-size="9" font-family="monospace" opacity="0.6">More</text>
+</svg>

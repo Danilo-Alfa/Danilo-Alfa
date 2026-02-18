@@ -1,0 +1,96 @@
+username: Danilo-Alfa
+
+profile:
+  name: "Danilo Alfa"
+  tagline: "Full Stack Developer"
+  philosophy: '"Building the future, one commit at a time."'
+
+social:
+  linkedin: "danilo-henrique"
+
+galaxy_arms:
+  - name: "Frontend"
+    color: "dendrite_violet"
+    items:
+      - "React"
+      - "Next.js"
+      - "Vite"
+      - "TailwindCSS"
+      - "Framer Motion"
+      - "Radix UI"
+      - "shadcn/ui"
+      - "MUI"
+  - name: "Backend"
+    color: "synapse_cyan"
+    items:
+      - "NestJS"
+      - "Node.js"
+      - "Express"
+      - "Supabase"
+      - "Socket.io"
+      - "MongoDB"
+      - "PostgreSQL"
+      - "Prisma"
+      - "Redis"
+      - "AWS Lambda"
+  - name: "Tools & DevOps"
+    color: "axon_amber"
+    items:
+      - "TypeScript"
+      - "JavaScript"
+      - "Python"
+      - "Git"
+      - "Docker"
+      - "Kubernetes"
+      - "GitHub Actions"
+      - "ESLint"
+      - "Vitest"
+      - "Jest"
+
+projects: []
+
+timeline:
+  - year: 2018
+    label: "HTML & CSS"
+    arm: 0
+  - year: 2019
+    label: "JavaScript"
+    arm: 2
+  - year: 2020
+    label: "React & Node.js"
+    arm: 0
+  - year: 2021
+    label: "TypeScript & Next.js"
+    arm: 2
+  - year: 2021
+    label: "TailwindCSS"
+    arm: 0
+  - year: 2022
+    label: "NestJS & PostgreSQL"
+    arm: 1
+  - year: 2023
+    label: "AWS & Docker"
+    arm: 2
+  - year: 2023
+    label: "Supabase & Socket.io"
+    arm: 1
+  - year: 2024
+    label: "Python & Kubernetes"
+    arm: 2
+
+stats:
+  metrics:
+    - "commits"
+    - "stars"
+    - "prs"
+    - "issues"
+    - "repos"
+
+languages:
+  exclude:
+    - "HTML"
+    - "CSS"
+    - "Shell"
+    - "Makefile"
+    - "Dockerfile"
+  max_display: 8

@@ -1,6 +1,7 @@
 """Entry point for the Galaxy Profile README generator."""
 
 import argparse
+import datetime
 import logging
 import os
 import sys
@@ -11,6 +12,7 @@ import yaml
 from generator.config import ConfigError, validate_config
 from generator.github_api import GitHubAPI
 from generator.svg_builder import SVGBuilder
+from generator.utils import deterministic_random
 
 logger = logging.getLogger(__name__)
 
@@ -25,6 +27,41 @@ DEMO_LANGUAGES = {
     "Dockerfile": 15000,
     "CSS": 10000,
 }
+
+
+def _generate_demo_contributions() -> dict:
+    """Generate synthetic contribution calendar data for demo mode."""
+    today = datetime.date.today()
+    # Go back ~52 weeks, align to Sunday
+    start = today - datetime.timedelta(weeks=52)
+    start = start - datetime.timedelta(days=(start.weekday() + 1) % 7)
+
+    total_days = 52 * 7
+    counts = deterministic_random("demo_contributions", total_days, 0, 15)
+    counts = [int(c) for c in counts]
+
+    weeks = []
+    total_count = 0
+    day_idx = 0
+    for w in range(52):
+        week_days = []
+        for d in range(7):
+            date = start + datetime.timedelta(weeks=w, days=d)
+            count = counts[day_idx]
+            # Reduce weekend activity
+            if d in (0, 6):
+                count = int(count * 0.3)
+            count = max(0, count)
+            total_count += count
+            week_days.append({
+                "date": date.isoformat(),
+                "count": count,
+                "weekday": d,
+            })
+            day_idx += 1
+        weeks.append(week_days)
+
+    return {"total_count": total_count, "weeks": weeks}
 
 
 def generate(args):
@@ -67,6 +104,7 @@ def generate(args):
         logger.info("Demo mode: using hardcoded stats and languages.")
         stats = DEMO_STATS
         languages = DEMO_LANGUAGES
+        contributions = _generate_demo_contributions()
     else:
         # Fetch GitHub data
         api = GitHubAPI(username)
@@ -85,11 +123,18 @@ def generate(args):
             logger.warning("Could not fetch languages (%s). Using defaults.", e)
             languages = {}
 
+        logger.info("Fetching contributions...")
+        try:
+            contributions = api.fetch_contributions()
+        except (requests.exceptions.RequestException, ValueError, KeyError) as e:
+            logger.warning("Could not fetch contributions (%s). Using defaults.", e)
+            contributions = {"total_count": 0, "weeks": []}
+
     logger.info("Stats: %s", stats)
     logger.info("Languages: %d found", len(languages))
 
     # Build SVGs
-    builder = SVGBuilder(config, stats, languages)
+    builder = SVGBuilder(config, stats, languages, contributions)
     output_dir = os.path.join(os.path.dirname(__file__), "..", "assets", "generated")
     os.makedirs(output_dir, exist_ok=True)
 
@@ -98,6 +143,9 @@ def generate(args):
         "stats-card.svg": builder.render_stats_card(),
         "tech-stack.svg": builder.render_tech_stack(),
         "projects-constellation.svg": builder.render_projects_constellation(),
+        "contribution-heatmap.svg": builder.render_contribution_heatmap(),
+        "skill-constellation.svg": builder.render_skill_constellation(),
+        "coding-timeline.svg": builder.render_coding_timeline(),
     }
 
     for filename, content in svgs.items():
@@ -106,7 +154,7 @@ def generate(args):
             f.write(content)
         logger.info("Wrote %s", path)
 
-    logger.info("Done! 4 SVGs generated.")
+    logger.info("Done! %d SVGs generated.", len(svgs))
 
 
 def main():

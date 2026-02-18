@@ -28,6 +28,24 @@
 
 <br/>
 
+<div align="center">
+  <img src="./assets/generated/contribution-heatmap.svg" width="850" alt="Contribution Nebula"/>
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="./assets/generated/skill-constellation.svg" width="850" alt="Skill Constellations"/>
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="./assets/generated/coding-timeline.svg" width="850" alt="Coding Timeline"/>
+</div>
+
+<br/>
+
 <details>
 <summary><strong>More about me</strong></summary>
 

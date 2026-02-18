@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="200" viewBox="0 0 850 200">
+  <defs>
+    <linearGradient id="comet-trail-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0"/>
+      <stop offset="70%" stop-color="#00d4ff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="tl-glow-0" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3" in="SourceGraphic" result="blur"/>
+      <feFlood flood-color="#a78bfa" flood-opacity="0.6" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="tl-glow-1" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3" in="SourceGraphic" result="blur"/>
+      <feFlood flood-color="#00d4ff" flood-opacity="0.6" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="tl-glow-2" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3" in="SourceGraphic" result="blur"/>
+      <feFlood flood-color="#ffb020" flood-opacity="0.6" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="comet-glow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#00d4ff" flood-opacity="0.8" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      @keyframes tl-node-activate {
+        0%, 80% { opacity: 0.3; }
+        85% { opacity: 1; }
+        100% { opacity: 0.8; }
+      }
+      @keyframes tl-label-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes tl-pulse {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0.5" y="0.5" width="849" height="199" rx="12" ry="12"
+        fill="#0f1623" stroke="#1a2332" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="30" y="28" fill="#64748b" font-size="11" font-family="monospace" letter-spacing="3">EVOLUTION TRAIL</text>
+  <circle cx="185" cy="24" r="3" fill="#00d4ff" opacity="0.8"><animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></circle>
+  <text x="820" y="28" fill="#64748b" font-size="10" font-family="monospace" text-anchor="end" opacity="0.5">2019 — 2023</text>
+
+  <!-- Timeline track -->
+  <line x1="60" y1="100" x2="790" y2="100" stroke="#1a2332" stroke-width="1.5" opacity="0.6"/>
+  <line x1="60" y1="100" x2="790" y2="100" stroke="#00d4ff" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Year markers -->
+  <text x="60.0" y="58" fill="#64748b" font-size="10" font-family="monospace" text-anchor="middle" opacity="0.6">2019</text>
+  <line x1="60.0" y1="95" x2="60.0" y2="105" stroke="#64748b" stroke-width="1" opacity="0.3"/>
+  <text x="242.5" y="58" fill="#64748b" font-size="10" font-family="monospace" text-anchor="middle" opacity="0.6">2020</text>
+  <line x1="242.5" y1="95" x2="242.5" y2="105" stroke="#64748b" stroke-width="1" opacity="0.3"/>
+  <text x="425.0" y="58" fill="#64748b" font-size="10" font-family="monospace" text-anchor="middle" opacity="0.6">2021</text>
+  <line x1="425.0" y1="95" x2="425.0" y2="105" stroke="#64748b" stroke-width="1" opacity="0.3"/>
+  <text x="607.5" y="58" fill="#64748b" font-size="10" font-family="monospace" text-anchor="middle" opacity="0.6">2022</text>
+  <line x1="607.5" y1="95" x2="607.5" y2="105" stroke="#64748b" stroke-width="1" opacity="0.3"/>
+  <text x="790.0" y="58" fill="#64748b" font-size="10" font-family="monospace" text-anchor="middle" opacity="0.6">2023</text>
+  <line x1="790.0" y1="95" x2="790.0" y2="105" stroke="#64748b" stroke-width="1" opacity="0.3"/>
+
+  <!-- Nodes and labels -->
+  <line x1="60.0" y1="100" x2="60.0" y2="90.0" stroke="#ffb020" stroke-width="0.8" opacity="0" style="animation: tl-node-activate 1s ease 0.0s forwards"/>
+  <circle cx="60.0" cy="100" r="9" fill="#ffb020" opacity="0" filter="url(#tl-glow-2)" style="animation: tl-node-activate 1s ease 0.0s forwards"/>
+  <circle cx="60.0" cy="100" r="5" fill="#ffb020" opacity="0" style="animation: tl-node-activate 1s ease 0.0s forwards"/>
+  <circle cx="60.0" cy="100" r="2" fill="#ffffff" opacity="0" style="animation: tl-node-activate 1s ease 0.0s forwards"/>
+  <text x="60.0" y="78.0" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0" style="animation: tl-label-in 0.6s ease 0.3s forwards">First Lines of Code</text>
+  <line x1="242.5" y1="100" x2="242.5" y2="110.0" stroke="#a78bfa" stroke-width="0.8" opacity="0" style="animation: tl-node-activate 1s ease 1.5s forwards"/>
+  <circle cx="242.5" cy="100" r="9" fill="#a78bfa" opacity="0" filter="url(#tl-glow-0)" style="animation: tl-node-activate 1s ease 1.5s forwards"/>
+  <circle cx="242.5" cy="100" r="5" fill="#a78bfa" opacity="0" style="animation: tl-node-activate 1s ease 1.5s forwards"/>
+  <circle cx="242.5" cy="100" r="2" fill="#ffffff" opacity="0" style="animation: tl-node-activate 1s ease 1.5s forwards"/>
+  <text x="242.5" y="132.0" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0" style="animation: tl-label-in 0.6s ease 1.8s forwards">React &amp; Node.js</text>
+  <line x1="425.0" y1="100" x2="425.0" y2="90.0" stroke="#ffb020" stroke-width="0.8" opacity="0" style="animation: tl-node-activate 1s ease 3.0s forwards"/>
+  <circle cx="425.0" cy="100" r="9" fill="#ffb020" opacity="0" filter="url(#tl-glow-2)" style="animation: tl-node-activate 1s ease 3.0s forwards"/>
+  <circle cx="425.0" cy="100" r="5" fill="#ffb020" opacity="0" style="animation: tl-node-activate 1s ease 3.0s forwards"/>
+  <circle cx="425.0" cy="100" r="2" fill="#ffffff" opacity="0" style="animation: tl-node-activate 1s ease 3.0s forwards"/>
+  <text x="425.0" y="78.0" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0" style="animation: tl-label-in 0.6s ease 3.3s forwards">TypeScript Adoption</text>
+  <line x1="607.5" y1="100" x2="607.5" y2="110.0" stroke="#00d4ff" stroke-width="0.8" opacity="0" style="animation: tl-node-activate 1s ease 4.5s forwards"/>
+  <circle cx="607.5" cy="100" r="9" fill="#00d4ff" opacity="0" filter="url(#tl-glow-1)" style="animation: tl-node-activate 1s ease 4.5s forwards"/>
+  <circle cx="607.5" cy="100" r="5" fill="#00d4ff" opacity="0" style="animation: tl-node-activate 1s ease 4.5s forwards"/>
+  <circle cx="607.5" cy="100" r="2" fill="#ffffff" opacity="0" style="animation: tl-node-activate 1s ease 4.5s forwards"/>
+  <text x="607.5" y="132.0" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0" style="animation: tl-label-in 0.6s ease 4.8s forwards">Cloud &amp; DevOps</text>
+  <line x1="790.0" y1="100" x2="790.0" y2="90.0" stroke="#ffb020" stroke-width="0.8" opacity="0" style="animation: tl-node-activate 1s ease 6.0s forwards"/>
+  <circle cx="790.0" cy="100" r="9" fill="#ffb020" opacity="0" filter="url(#tl-glow-2)" style="animation: tl-node-activate 1s ease 6.0s forwards"/>
+  <circle cx="790.0" cy="100" r="5" fill="#ffb020" opacity="0" style="animation: tl-node-activate 1s ease 6.0s forwards"/>
+  <circle cx="790.0" cy="100" r="2" fill="#ffffff" opacity="0" style="animation: tl-node-activate 1s ease 6.0s forwards"/>
+  <text x="790.0" y="78.0" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0" style="animation: tl-label-in 0.6s ease 6.3s forwards">Open Source Contributor</text>
+
+  <!-- Comet -->
+  <g transform="translate(60,100)">
+    <circle r="4" fill="#ffffff" opacity="0.9" filter="url(#comet-glow)">
+      <animateMotion path="M 0,0 L 730,0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2" fill="#00d4ff" opacity="0.6">
+      <animateMotion path="M 0,0 L 730,0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
