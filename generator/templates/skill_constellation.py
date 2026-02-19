@@ -4,8 +4,8 @@ import math
 
 from generator.utils import deterministic_random, esc, resolve_arm_colors
 
-WIDTH, HEIGHT = 850, 400
-ZONE_PADDING = 30
+WIDTH, HEIGHT = 850, 500
+ZONE_PADDING = 20
 STAR_MAX_RADIUS = 6.0
 STAR_MIN_RADIUS = 3.0
 LINE_OPACITY = 0.2
@@ -69,27 +69,46 @@ def _build_starfield(theme):
 def _compute_star_positions(items, zone_x, zone_y, zone_w, zone_h, arm_idx):
     """Compute deterministic (x, y, radius) positions for each skill star in a zone.
 
-    Stars are placed in a scattered pattern within the zone, avoiding edges.
-    Returns list of (x, y, radius, item_name) tuples.
+    Uses a grid-based layout with jitter to spread stars evenly while
+    avoiding overlap. Returns list of (x, y, radius, item_name) tuples.
     """
     n = len(items)
     if n == 0:
         return []
 
-    inner_pad = 25
-    positions = []
+    inner_pad = 20
+    usable_w = zone_w - inner_pad * 2
+    usable_h = zone_h - inner_pad * 2
 
-    # Generate candidate positions for each item
+    # Compute grid dimensions to spread items evenly
+    cols = math.ceil(math.sqrt(n * (usable_w / max(usable_h, 1))))
+    cols = max(cols, 1)
+    rows = math.ceil(n / cols)
+
+    cell_w = usable_w / max(cols, 1)
+    cell_h = usable_h / max(rows, 1)
+
+    # Generate jitter values for natural feel
+    jx = deterministic_random(f"const_jx_{arm_idx}", n, -cell_w * 0.25, cell_w * 0.25)
+    jy = deterministic_random(f"const_jy_{arm_idx}", n, -cell_h * 0.25, cell_h * 0.25)
+
+    positions = []
     for i, item in enumerate(items):
-        seed = f"constellation_{arm_idx}_{i}"
-        rx = deterministic_random(seed + "_x", 1, zone_x + inner_pad, zone_x + zone_w - inner_pad)
-        ry = deterministic_random(seed + "_y", 1, zone_y + inner_pad, zone_y + zone_h - inner_pad)
+        col = i % cols
+        row = i // cols
+
+        x = zone_x + inner_pad + col * cell_w + cell_w / 2 + jx[i]
+        y = zone_y + inner_pad + row * cell_h + cell_h / 2 + jy[i]
+
+        # Clamp within zone bounds
+        x = max(zone_x + inner_pad, min(x, zone_x + zone_w - inner_pad))
+        y = max(zone_y + inner_pad, min(y, zone_y + zone_h - inner_pad))
 
         # Size: first items are larger (more prominent)
         t = i / max(n - 1, 1)
         radius = STAR_MAX_RADIUS - t * (STAR_MAX_RADIUS - STAR_MIN_RADIUS)
 
-        positions.append((rx[0], ry[0], radius, item))
+        positions.append((x, y, radius, item))
 
     return positions
 

@@ -47,7 +47,16 @@ galaxy_arms:
       - "Vitest"
       - "Jest"
 
-projects: []
+projects:
+  - repo: "Danilo-Alfa/AvivaNacoes"
+    arm: 0
+    description: "Site Social para a Igreja Evangelica Avivamento para as Nações"
+  - repo: "Danilo-Alfa/ebook-landing-page"
+    arm: 0
+    description: "Landing page para venda de ebooks"
+  - repo: "UNetwork-TCC/UNetwork_WebApplication"
+    arm: 1
+    description: "Rede Social desenvolvida no TCC do Ensino Médio"
 
 timeline:
   - year: 2018
