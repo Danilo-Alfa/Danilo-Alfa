@@ -32,7 +32,7 @@
   <!-- Title -->
   <text x="30" y="30" fill="#64748b" font-size="11" font-family="monospace" letter-spacing="3">CONTRIBUTION NEBULA</text>
   <circle cx="240" cy="26" r="3" fill="#00d4ff" opacity="0.8"><animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></circle>
-  <text x="820" y="30" fill="#00d4ff" font-size="12" font-family="monospace" text-anchor="end" font-weight="bold" style="animation: hm-count-glow 3s ease infinite">769 contributions</text>
+  <text x="820" y="30" fill="#00d4ff" font-size="12" font-family="monospace" text-anchor="end" font-weight="bold" style="animation: hm-count-glow 3s ease infinite">770 contributions</text>
 
   <!-- Month labels -->
   <text x="45" y="47" fill="#64748b" font-size="9" font-family="monospace" opacity="0.7">Feb</text>
