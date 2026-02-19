@@ -1,4 +1,4 @@
-"""Entry point for the Galaxy Profile README generator."""
+"""Entry point for the Galaxy Profile README generator."""  # noqa
 
 import argparse
 import datetime
