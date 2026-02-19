@@ -108,6 +108,8 @@ def generate(args):
     else:
         # Fetch GitHub data
         api = GitHubAPI(username)
+        token_status = "PAT/token present" if api.token else "NO token found"
+        logger.info("Token status: %s", token_status)
 
         logger.info("Fetching stats...")
         try:
@@ -132,6 +134,11 @@ def generate(args):
 
     logger.info("Stats: %s", stats)
     logger.info("Languages: %d found", len(languages))
+    logger.info(
+        "Contributions: total=%d, weeks=%d",
+        contributions.get("total_count", 0),
+        len(contributions.get("weeks", [])),
+    )
 
     # Build SVGs
     builder = SVGBuilder(config, stats, languages, contributions)

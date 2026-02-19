@@ -3,6 +3,7 @@
 import logging
 import os
 import time
+from datetime import datetime, timedelta, timezone
 
 import requests
 
@@ -208,10 +209,17 @@ class GitHubAPI:
             logger.warning("Token required for contributions API.")
             return {"total_count": 0, "weeks": []}
 
+        # Explicit date range: last 365 days
+        now = datetime.now(timezone.utc)
+        date_from = (now - timedelta(days=365)).strftime("%Y-%m-%dT00:00:00Z")
+        date_to = now.strftime("%Y-%m-%dT23:59:59Z")
+
+        logger.info("Fetching contributions from %s to %s", date_from, date_to)
+
         query = """
-        query($username: String!) {
+        query($username: String!, $from: DateTime!, $to: DateTime!) {
             user(login: $username) {
-                contributionsCollection {
+                contributionsCollection(from: $from, to: $to) {
                     contributionCalendar {
                         totalContributions
                         weeks {
@@ -230,7 +238,14 @@ class GitHubAPI:
             resp = self._request(
                 "POST",
                 self.GRAPHQL_URL,
-                json={"query": query, "variables": {"username": self.username}},
+                json={
+                    "query": query,
+                    "variables": {
+                        "username": self.username,
+                        "from": date_from,
+                        "to": date_to,
+                    },
+                },
             )
             resp.raise_for_status()
             data = resp.json()
@@ -251,8 +266,11 @@ class GitHubAPI:
                     })
                 weeks.append(days)
 
+            total = calendar["totalContributions"]
+            logger.info("Contributions fetched: total=%d, weeks=%d", total, len(weeks))
+
             return {
-                "total_count": calendar["totalContributions"],
+                "total_count": total,
                 "weeks": weeks,
             }
         except (requests.exceptions.RequestException, ValueError, KeyError) as e:
