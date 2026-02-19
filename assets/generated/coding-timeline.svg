@@ -65,50 +65,74 @@
   <!-- Title -->
   <text x="30" y="28" fill="#64748b" font-size="11" font-family="monospace" letter-spacing="3">EVOLUTION TRAIL</text>
   <circle cx="185" cy="24" r="3" fill="#00d4ff" opacity="0.8"><animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></circle>
-  <text x="820" y="28" fill="#64748b" font-size="10" font-family="monospace" text-anchor="end" opacity="0.5">2019 — 2023</text>
+  <text x="820" y="28" fill="#64748b" font-size="10" font-family="monospace" text-anchor="end" opacity="0.5">2018 â€” 2024</text>
 
   <!-- Timeline track -->
   <line x1="60" y1="100" x2="790" y2="100" stroke="#1a2332" stroke-width="1.5" opacity="0.6"/>
   <line x1="60" y1="100" x2="790" y2="100" stroke="#00d4ff" stroke-width="0.5" opacity="0.3"/>
 
   <!-- Year markers -->
-  <text x="60.0" y="58" fill="#64748b" font-size="10" font-family="monospace" text-anchor="middle" opacity="0.6">2019</text>
+  <text x="60.0" y="58" fill="#64748b" font-size="10" font-family="monospace" text-anchor="middle" opacity="0.6">2018</text>
   <line x1="60.0" y1="95" x2="60.0" y2="105" stroke="#64748b" stroke-width="1" opacity="0.3"/>
-  <text x="242.5" y="58" fill="#64748b" font-size="10" font-family="monospace" text-anchor="middle" opacity="0.6">2020</text>
-  <line x1="242.5" y1="95" x2="242.5" y2="105" stroke="#64748b" stroke-width="1" opacity="0.3"/>
+  <text x="181.7" y="58" fill="#64748b" font-size="10" font-family="monospace" text-anchor="middle" opacity="0.6">2019</text>
+  <line x1="181.7" y1="95" x2="181.7" y2="105" stroke="#64748b" stroke-width="1" opacity="0.3"/>
+  <text x="303.3" y="58" fill="#64748b" font-size="10" font-family="monospace" text-anchor="middle" opacity="0.6">2020</text>
+  <line x1="303.3" y1="95" x2="303.3" y2="105" stroke="#64748b" stroke-width="1" opacity="0.3"/>
   <text x="425.0" y="58" fill="#64748b" font-size="10" font-family="monospace" text-anchor="middle" opacity="0.6">2021</text>
   <line x1="425.0" y1="95" x2="425.0" y2="105" stroke="#64748b" stroke-width="1" opacity="0.3"/>
-  <text x="607.5" y="58" fill="#64748b" font-size="10" font-family="monospace" text-anchor="middle" opacity="0.6">2022</text>
-  <line x1="607.5" y1="95" x2="607.5" y2="105" stroke="#64748b" stroke-width="1" opacity="0.3"/>
-  <text x="790.0" y="58" fill="#64748b" font-size="10" font-family="monospace" text-anchor="middle" opacity="0.6">2023</text>
+  <text x="546.7" y="58" fill="#64748b" font-size="10" font-family="monospace" text-anchor="middle" opacity="0.6">2022</text>
+  <line x1="546.7" y1="95" x2="546.7" y2="105" stroke="#64748b" stroke-width="1" opacity="0.3"/>
+  <text x="668.3" y="58" fill="#64748b" font-size="10" font-family="monospace" text-anchor="middle" opacity="0.6">2023</text>
+  <line x1="668.3" y1="95" x2="668.3" y2="105" stroke="#64748b" stroke-width="1" opacity="0.3"/>
+  <text x="790.0" y="58" fill="#64748b" font-size="10" font-family="monospace" text-anchor="middle" opacity="0.6">2024</text>
   <line x1="790.0" y1="95" x2="790.0" y2="105" stroke="#64748b" stroke-width="1" opacity="0.3"/>
 
   <!-- Nodes and labels -->
-  <line x1="60.0" y1="100" x2="60.0" y2="90.0" stroke="#ffb020" stroke-width="0.8" opacity="0" style="animation: tl-node-activate 1s ease 0.0s forwards"/>
-  <circle cx="60.0" cy="100" r="9" fill="#ffb020" opacity="0" filter="url(#tl-glow-2)" style="animation: tl-node-activate 1s ease 0.0s forwards"/>
-  <circle cx="60.0" cy="100" r="5" fill="#ffb020" opacity="0" style="animation: tl-node-activate 1s ease 0.0s forwards"/>
+  <line x1="60.0" y1="100" x2="60.0" y2="90.0" stroke="#a78bfa" stroke-width="0.8" opacity="0" style="animation: tl-node-activate 1s ease 0.0s forwards"/>
+  <circle cx="60.0" cy="100" r="9" fill="#a78bfa" opacity="0" filter="url(#tl-glow-0)" style="animation: tl-node-activate 1s ease 0.0s forwards"/>
+  <circle cx="60.0" cy="100" r="5" fill="#a78bfa" opacity="0" style="animation: tl-node-activate 1s ease 0.0s forwards"/>
   <circle cx="60.0" cy="100" r="2" fill="#ffffff" opacity="0" style="animation: tl-node-activate 1s ease 0.0s forwards"/>
-  <text x="60.0" y="78.0" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0" style="animation: tl-label-in 0.6s ease 0.3s forwards">First Lines of Code</text>
-  <line x1="242.5" y1="100" x2="242.5" y2="110.0" stroke="#a78bfa" stroke-width="0.8" opacity="0" style="animation: tl-node-activate 1s ease 1.5s forwards"/>
-  <circle cx="242.5" cy="100" r="9" fill="#a78bfa" opacity="0" filter="url(#tl-glow-0)" style="animation: tl-node-activate 1s ease 1.5s forwards"/>
-  <circle cx="242.5" cy="100" r="5" fill="#a78bfa" opacity="0" style="animation: tl-node-activate 1s ease 1.5s forwards"/>
-  <circle cx="242.5" cy="100" r="2" fill="#ffffff" opacity="0" style="animation: tl-node-activate 1s ease 1.5s forwards"/>
-  <text x="242.5" y="132.0" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0" style="animation: tl-label-in 0.6s ease 1.8s forwards">React &amp; Node.js</text>
-  <line x1="425.0" y1="100" x2="425.0" y2="90.0" stroke="#ffb020" stroke-width="0.8" opacity="0" style="animation: tl-node-activate 1s ease 3.0s forwards"/>
-  <circle cx="425.0" cy="100" r="9" fill="#ffb020" opacity="0" filter="url(#tl-glow-2)" style="animation: tl-node-activate 1s ease 3.0s forwards"/>
-  <circle cx="425.0" cy="100" r="5" fill="#ffb020" opacity="0" style="animation: tl-node-activate 1s ease 3.0s forwards"/>
+  <text x="60.0" y="78.0" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0" style="animation: tl-label-in 0.6s ease 0.3s forwards">HTML &amp; CSS</text>
+  <line x1="181.7" y1="100" x2="181.7" y2="110.0" stroke="#ffb020" stroke-width="0.8" opacity="0" style="animation: tl-node-activate 1s ease 1.0s forwards"/>
+  <circle cx="181.7" cy="100" r="9" fill="#ffb020" opacity="0" filter="url(#tl-glow-2)" style="animation: tl-node-activate 1s ease 1.0s forwards"/>
+  <circle cx="181.7" cy="100" r="5" fill="#ffb020" opacity="0" style="animation: tl-node-activate 1s ease 1.0s forwards"/>
+  <circle cx="181.7" cy="100" r="2" fill="#ffffff" opacity="0" style="animation: tl-node-activate 1s ease 1.0s forwards"/>
+  <text x="181.7" y="132.0" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0" style="animation: tl-label-in 0.6s ease 1.3s forwards">JavaScript</text>
+  <line x1="303.3" y1="100" x2="303.3" y2="90.0" stroke="#a78bfa" stroke-width="0.8" opacity="0" style="animation: tl-node-activate 1s ease 2.0s forwards"/>
+  <circle cx="303.3" cy="100" r="9" fill="#a78bfa" opacity="0" filter="url(#tl-glow-0)" style="animation: tl-node-activate 1s ease 2.0s forwards"/>
+  <circle cx="303.3" cy="100" r="5" fill="#a78bfa" opacity="0" style="animation: tl-node-activate 1s ease 2.0s forwards"/>
+  <circle cx="303.3" cy="100" r="2" fill="#ffffff" opacity="0" style="animation: tl-node-activate 1s ease 2.0s forwards"/>
+  <text x="303.3" y="78.0" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0" style="animation: tl-label-in 0.6s ease 2.3s forwards">React &amp; Node.js</text>
+  <line x1="425.0" y1="100" x2="425.0" y2="110.0" stroke="#a78bfa" stroke-width="0.8" opacity="0" style="animation: tl-node-activate 1s ease 3.0s forwards"/>
+  <circle cx="425.0" cy="100" r="9" fill="#a78bfa" opacity="0" filter="url(#tl-glow-0)" style="animation: tl-node-activate 1s ease 3.0s forwards"/>
+  <circle cx="425.0" cy="100" r="5" fill="#a78bfa" opacity="0" style="animation: tl-node-activate 1s ease 3.0s forwards"/>
   <circle cx="425.0" cy="100" r="2" fill="#ffffff" opacity="0" style="animation: tl-node-activate 1s ease 3.0s forwards"/>
-  <text x="425.0" y="78.0" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0" style="animation: tl-label-in 0.6s ease 3.3s forwards">TypeScript Adoption</text>
-  <line x1="607.5" y1="100" x2="607.5" y2="110.0" stroke="#00d4ff" stroke-width="0.8" opacity="0" style="animation: tl-node-activate 1s ease 4.5s forwards"/>
-  <circle cx="607.5" cy="100" r="9" fill="#00d4ff" opacity="0" filter="url(#tl-glow-1)" style="animation: tl-node-activate 1s ease 4.5s forwards"/>
-  <circle cx="607.5" cy="100" r="5" fill="#00d4ff" opacity="0" style="animation: tl-node-activate 1s ease 4.5s forwards"/>
-  <circle cx="607.5" cy="100" r="2" fill="#ffffff" opacity="0" style="animation: tl-node-activate 1s ease 4.5s forwards"/>
-  <text x="607.5" y="132.0" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0" style="animation: tl-label-in 0.6s ease 4.8s forwards">Cloud &amp; DevOps</text>
+  <text x="425.0" y="132.0" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0" style="animation: tl-label-in 0.6s ease 3.3s forwards">TailwindCSS</text>
+  <line x1="445.0" y1="100" x2="445.0" y2="90.0" stroke="#ffb020" stroke-width="0.8" opacity="0" style="animation: tl-node-activate 1s ease 3.2s forwards"/>
+  <circle cx="445.0" cy="100" r="9" fill="#ffb020" opacity="0" filter="url(#tl-glow-2)" style="animation: tl-node-activate 1s ease 3.2s forwards"/>
+  <circle cx="445.0" cy="100" r="5" fill="#ffb020" opacity="0" style="animation: tl-node-activate 1s ease 3.2s forwards"/>
+  <circle cx="445.0" cy="100" r="2" fill="#ffffff" opacity="0" style="animation: tl-node-activate 1s ease 3.2s forwards"/>
+  <text x="445.0" y="78.0" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0" style="animation: tl-label-in 0.6s ease 3.5s forwards">TypeScript &amp; Next.js</text>
+  <line x1="546.7" y1="100" x2="546.7" y2="110.0" stroke="#00d4ff" stroke-width="0.8" opacity="0" style="animation: tl-node-activate 1s ease 4.0s forwards"/>
+  <circle cx="546.7" cy="100" r="9" fill="#00d4ff" opacity="0" filter="url(#tl-glow-1)" style="animation: tl-node-activate 1s ease 4.0s forwards"/>
+  <circle cx="546.7" cy="100" r="5" fill="#00d4ff" opacity="0" style="animation: tl-node-activate 1s ease 4.0s forwards"/>
+  <circle cx="546.7" cy="100" r="2" fill="#ffffff" opacity="0" style="animation: tl-node-activate 1s ease 4.0s forwards"/>
+  <text x="546.7" y="132.0" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0" style="animation: tl-label-in 0.6s ease 4.3s forwards">NestJS &amp; PostgreSQL</text>
+  <line x1="668.3" y1="100" x2="668.3" y2="90.0" stroke="#ffb020" stroke-width="0.8" opacity="0" style="animation: tl-node-activate 1s ease 5.0s forwards"/>
+  <circle cx="668.3" cy="100" r="9" fill="#ffb020" opacity="0" filter="url(#tl-glow-2)" style="animation: tl-node-activate 1s ease 5.0s forwards"/>
+  <circle cx="668.3" cy="100" r="5" fill="#ffb020" opacity="0" style="animation: tl-node-activate 1s ease 5.0s forwards"/>
+  <circle cx="668.3" cy="100" r="2" fill="#ffffff" opacity="0" style="animation: tl-node-activate 1s ease 5.0s forwards"/>
+  <text x="668.3" y="78.0" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0" style="animation: tl-label-in 0.6s ease 5.3s forwards">AWS &amp; Docker</text>
+  <line x1="688.3" y1="100" x2="688.3" y2="110.0" stroke="#00d4ff" stroke-width="0.8" opacity="0" style="animation: tl-node-activate 1s ease 5.2s forwards"/>
+  <circle cx="688.3" cy="100" r="9" fill="#00d4ff" opacity="0" filter="url(#tl-glow-1)" style="animation: tl-node-activate 1s ease 5.2s forwards"/>
+  <circle cx="688.3" cy="100" r="5" fill="#00d4ff" opacity="0" style="animation: tl-node-activate 1s ease 5.2s forwards"/>
+  <circle cx="688.3" cy="100" r="2" fill="#ffffff" opacity="0" style="animation: tl-node-activate 1s ease 5.2s forwards"/>
+  <text x="688.3" y="132.0" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0" style="animation: tl-label-in 0.6s ease 5.5s forwards">Supabase &amp; Socket.io</text>
   <line x1="790.0" y1="100" x2="790.0" y2="90.0" stroke="#ffb020" stroke-width="0.8" opacity="0" style="animation: tl-node-activate 1s ease 6.0s forwards"/>
   <circle cx="790.0" cy="100" r="9" fill="#ffb020" opacity="0" filter="url(#tl-glow-2)" style="animation: tl-node-activate 1s ease 6.0s forwards"/>
   <circle cx="790.0" cy="100" r="5" fill="#ffb020" opacity="0" style="animation: tl-node-activate 1s ease 6.0s forwards"/>
   <circle cx="790.0" cy="100" r="2" fill="#ffffff" opacity="0" style="animation: tl-node-activate 1s ease 6.0s forwards"/>
-  <text x="790.0" y="78.0" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0" style="animation: tl-label-in 0.6s ease 6.3s forwards">Open Source Contributor</text>
+  <text x="790.0" y="78.0" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0" style="animation: tl-label-in 0.6s ease 6.3s forwards">Python &amp; Kubernetes</text>
 
   <!-- Comet -->
   <g transform="translate(60,100)">
