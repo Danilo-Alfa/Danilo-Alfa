@@ -224,6 +224,65 @@ def _build_radar_labels_and_dots(sector_data, galaxy_arms, rcx, rcy, radius, the
     return "\n".join(parts)
 
 
+def _build_stack_manifest(galaxy_arms, arm_colors, theme, start_y, card_width):
+    """Build the STACK MANIFEST section listing arms and their items.
+
+    Args:
+        galaxy_arms: list of arm configs with name, items
+        arm_colors: list of resolved hex colors per arm
+        theme: color palette dict
+        start_y: y offset for the section label
+        card_width: full card width for the separator line
+
+    Returns:
+        (svg_str, end_y) tuple
+    """
+    parts = []
+    label_x = 30
+    items_x = 160
+    line_height = 22
+
+    # Subtle separator line above the section
+    parts.append(
+        f'  <line x1="{label_x}" y1="{start_y - 12}" x2="{card_width - label_x}" y2="{start_y - 12}" '
+        f'stroke="{theme["star_dust"]}" stroke-width="1" opacity="0.4"/>'
+    )
+
+    # Section label
+    parts.append(
+        f'  <text x="{label_x}" y="{start_y}" fill="{theme["text_faint"]}" '
+        f'font-size="11" font-family="monospace" letter-spacing="3">STACK MANIFEST</text>'
+    )
+
+    y = start_y + 25
+    for i, arm in enumerate(galaxy_arms):
+        color = arm_colors[i]
+        name = arm["name"].upper()
+        items = arm.get("items", [])
+        if not items:
+            continue
+
+        parts.append(
+            f'  <circle cx="{label_x + 4}" cy="{y}" r="3" fill="{color}" opacity="0.85"/>'
+        )
+        parts.append(
+            f'  <text x="{label_x + 14}" y="{y}" fill="{color}" '
+            f'font-size="10" font-family="monospace" letter-spacing="1" '
+            f'dominant-baseline="middle">{esc(name)}</text>'
+        )
+
+        items_str = "  ·  ".join(items)
+        parts.append(
+            f'  <text x="{items_x}" y="{y}" fill="{theme["text_dim"]}" '
+            f'font-size="10" font-family="sans-serif" '
+            f'dominant-baseline="middle">{esc(items_str)}</text>'
+        )
+
+        y += line_height
+
+    return "\n".join(parts), y + 5
+
+
 def render(
     languages: dict,
     galaxy_arms: list,
@@ -274,7 +333,7 @@ def render(
     # Dynamic height
     lang_height = start_y + len(lang_data) * 22 + 20
     radar_height = rcy + radius + 35
-    height = max(200, lang_height, radar_height)
+    main_content_height = max(lang_height, radar_height)
 
     # Build radar SVG elements
     radar_parts = []
@@ -284,6 +343,14 @@ def render(
     radar_parts.append(_build_radar_labels_and_dots(sector_data, galaxy_arms, rcx, rcy, radius, theme))
 
     radar_str = "\n".join(radar_parts)
+
+    # Stack manifest (below main content)
+    manifest_start_y = main_content_height + 15
+    manifest_str, manifest_end_y = _build_stack_manifest(
+        galaxy_arms, all_arm_colors, theme, manifest_start_y, WIDTH
+    )
+    height = max(200, manifest_end_y + 15)
+    divider_end_y = main_content_height - 15
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{height}" viewBox="0 0 {WIDTH} {height}">
   <defs/>
@@ -296,7 +363,7 @@ def render(
   <text x="30" y="38" fill="{theme['text_faint']}" font-size="11" font-family="monospace" letter-spacing="3">LANGUAGE TELEMETRY</text>
 
   <!-- Vertical divider -->
-  <line x1="425" y1="25" x2="425" y2="{height - 25}" stroke="{theme['star_dust']}" stroke-width="1" opacity="0.4"/>
+  <line x1="425" y1="25" x2="425" y2="{divider_end_y}" stroke="{theme['star_dust']}" stroke-width="1" opacity="0.4"/>
 
   <!-- Right: Focus Sectors -->
   <text x="460" y="38" fill="{theme['text_faint']}" font-size="11" font-family="monospace" letter-spacing="3">FOCUS SECTORS</text>
@@ -304,4 +371,6 @@ def render(
 {bars_str}
 
 {radar_str}
+
+{manifest_str}
 </svg>'''

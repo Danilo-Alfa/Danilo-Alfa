@@ -102,5 +102,6 @@ languages:
     - "Shell"
     - "Makefile"
     - "Dockerfile"
+    - "PLpgSQL"
   max_display: 8
 

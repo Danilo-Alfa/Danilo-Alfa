@@ -47,7 +47,7 @@
 <br/>
 
 <div align="center">
-  <a href="https://www.linkedin.com/in/danilo-henrique/">
+  <a href="https://www.linkedin.com/in/danilo-alfa-henrique/">
     <img src="https://img.shields.io/badge/-LinkedIn-080c14?style=for-the-badge&logo=linkedin&logoColor=a78bfa" alt="LinkedIn"/>
   </a>
 </div>

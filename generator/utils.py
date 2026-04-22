@@ -171,13 +171,17 @@ def calculate_language_percentages(
     top = sorted_langs[:max_display]
 
     return [
-        {
-            "name": name,
-            "bytes": count,
-            "percentage": round((count / total) * 100, 1),
-            "color": get_language_color(name),
-        }
-        for name, count in top
+        entry
+        for entry in (
+            {
+                "name": name,
+                "bytes": count,
+                "percentage": round((count / total) * 100, 1),
+                "color": get_language_color(name),
+            }
+            for name, count in top
+        )
+        if entry["percentage"] > 0
     ]
 
 

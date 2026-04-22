@@ -157,7 +157,7 @@ def generate(args):
 
     for filename, content in svgs.items():
         path = os.path.join(output_dir, filename)
-        with open(path, "w") as f:
+        with open(path, "w", encoding="utf-8") as f:
             f.write(content)
         logger.info("Wrote %s", path)
 
