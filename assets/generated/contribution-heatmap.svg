@@ -418,7 +418,7 @@
   <rect x="759" y="97" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.77s forwards; animation: hm-cell-pulse 3s ease 1.7650000000000001s infinite;"/>
   <rect x="759" y="111" width="11" height="11" rx="2" ry="2" fill="#00d4ff" filter="url(#cell-glow)" opacity="0" style="--cell-op: 1.0; animation: hm-cell-appear 0.4s ease 0.77s forwards; animation: hm-cell-pulse 3s ease 1.7650000000000001s infinite;"/>
   <rect x="759" y="125" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.77s forwards;"/>
-  <rect x="759" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.25; animation: hm-cell-appear 0.4s ease 0.77s forwards;"/>
+  <rect x="759" y="139" width="11" height="11" rx="2" ry="2" fill="#00d4ff" opacity="0" style="--cell-op: 0.5; animation: hm-cell-appear 0.4s ease 0.77s forwards;"/>
   <rect x="773" y="55" width="11" height="11" rx="2" ry="2" fill="#1a2332" opacity="0" style="--cell-op: 0.3; animation: hm-cell-appear 0.4s ease 0.78s forwards;"/>
 
   <!-- Legend -->
